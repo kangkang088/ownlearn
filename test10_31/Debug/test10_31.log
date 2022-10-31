@@ -1,11 +1,18 @@
-﻿生成启动时间为 2022/10/31 16:46:38。
-     1>项目“G:\WAIGUA\cDAIMA\test10_31\test10_31\test10_31.vcxproj”在节点 2 上(Build 个目标)。
+﻿生成启动时间为 2022/10/31 17:19:34。
+     1>项目“F:\CCCCXIANGMU\ownlearn\test10_31\test10_31.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         G:\WAIGUA\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt 1.c
-         1.c
-     1>g:\waigua\cdaima\test10_31\test10_31\1.c(24): error C2106: “=”: 左操作数必须为左值
-     1>已完成生成项目“G:\WAIGUA\cDAIMA\test10_31\test10_31\test10_31.vcxproj”(Build 个目标)的操作 - 失败。
+         G:\WAIGUA\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt 2.c
+         2.c
+     1>f:\ccccxiangmu\ownlearn\test10_31\2.c(8): warning C4047: “初始化”:“char *”与“char (*)[5]”的间接级别不同
+     1>f:\ccccxiangmu\ownlearn\test10_31\2.c(12): warning C4047: “函数”:“const char *”与“int”的间接级别不同
+     1>f:\ccccxiangmu\ownlearn\test10_31\2.c(12): warning C4024: “strcpy”: 形参和实参 2 的类型不同
+     1>f:\ccccxiangmu\ownlearn\test10_31\2.c(12): warning C4020: “strcpy”: 实参太多
+       Link:
+         G:\WAIGUA\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\CCCCXIANGMU\ownlearn\test10_31\Debug\test10_31.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\CCCCXIANGMU\ownlearn\test10_31\Debug\test10_31.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\CCCCXIANGMU\ownlearn\test10_31\Debug\test10_31.lib" /MACHINE:X86 Debug\1.obj
+         Debug\2.obj
+         test10_31.vcxproj -> F:\CCCCXIANGMU\ownlearn\test10_31\Debug\test10_31.exe
+     1>已完成生成项目“F:\CCCCXIANGMU\ownlearn\test10_31\test10_31.vcxproj”(Build 个目标)的操作。
 
-生成失败。
+生成成功。
 
-已用时间 00:00:00.07
+已用时间 00:00:00.29
