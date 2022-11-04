@@ -216,59 +216,82 @@
 //	return 0;
 //}
 
-void menu()
-{
-	printf("*****************************\n");
-	printf("**     1.开始 0. 结束      **\n");
-	printf("*****************************\n");
-}
-void game()
-{
-	int guess = 0;
-	int ret = 0;
-	ret = rand() % 100 + 1;	
-	printf("开始猜数字：");
-	while (1)
-	{
-		scanf("%d", &guess);  //每次猜都要输入一次，所以在循环里面，如果在外面，只会输入一次。
-		if (guess < ret)
-		{
-			printf("猜小了\n");
-		}
-		else if (guess>ret)
-		{
-			printf("猜大了\n");
-		}
-		else
-		{
-			printf("恭喜您，猜对了\n");
-			break;
-		}
-	}
-	}
+//void menu()
+//{
+//	printf("*****************************\n");
+//	printf("**     1.开始 0. 结束      **\n");
+//	printf("*****************************\n");
+//}
+//void game()
+//{
+//	int guess = 0;
+//	int ret = 0;
+//	ret = rand() % 100 + 1;	
+//	printf("开始猜数字：");
+//	while (1)
+//	{
+//		scanf("%d", &guess);  //每次猜都要输入一次，所以在循环里面，如果在外面，只会输入一次。
+//		if (guess < ret)
+//		{
+//			printf("猜小了\n");
+//		}
+//		else if (guess>ret)
+//		{
+//			printf("猜大了\n");
+//		}
+//		else
+//		{
+//			printf("恭喜您，猜对了\n");
+//			break;
+//		}
+//	}
+//	}
+//int main()
+//{
+//	srand((unsigned)time(NULL));
+//	int input = 0;	
+//	do
+//	{
+//		menu();
+//		scanf("%d", &input);//要在循环里面，如果在外面，当你第一次输入1，进入猜数字游戏，直到你猜对，程序直接跳到继续下一轮猜数字，不会询问你是否用1/0确认是否继续游戏。
+//		switch (input)
+//		{
+//		case 1:
+//			game();
+//			break;
+//		case 0:
+//			printf("退出游戏\n");
+//			break;
+//		default:
+//		{
+//				   printf("输入错误\n");
+//				   break;
+//		}
+//		}
+//	} while (input);
+//	return 0;
+//}
+
 int main()
 {
-	srand((unsigned)time(NULL));
-	int input = 0;	
-	do
+	char c;
+	while (2)
 	{
-		menu();
-		scanf("%d", &input);//要在循环里面，如果在外面，当你第一次输入1，进入猜数字游戏，直到你猜对，程序直接跳到继续下一轮猜数字，不会询问你是否用1/0确认是否继续游戏。
-		switch (input)
+		scanf("%c", &c);
+		switch (c)
 		{
-		case 1:
-			game();
+		case 'a':
+			printf("haha\n");
 			break;
-		case 0:
-			printf("退出游戏\n");
+		case 'b':
+			printf("hehe\n");
 			break;
 		default:
-		{
-				   printf("输入错误\n");
-				   break;
+			printf("I DON'T KNOW\n");
 		}
-		}
-	} while (input);
+		getchar();
+	}
+	
 	return 0;
 }
 
