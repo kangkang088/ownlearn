@@ -90,7 +90,6 @@
 //			if (arr1[i] == arr2[k])
 //			{
 //				num++;
-//				arr1[i] = 0;
 //			}
 //		}
 //	}
@@ -228,35 +227,35 @@
 //}
 
 
-#include <math.h>
-//写一个函数，可以判断一个数是不是素数
-int panduan(int x)
-{
-	int i = 0;
-	for (i = 2; i <= sqrt(x); i++)
-	{
-		if (x%i == 0)
-			return 0;
-		//else   //这样写不行，比如9，当i为2进入时，直接return 1；但3还没有测试
-		//	return 1;
-	}
-	return 1;//这个代码其实就是和用if判断i>sqrt(i)一样，当一直测试到不满足条件时，也没有return 0；返回，说明这个数满足返回return 1的条件。
-}
-int main()
-{
-	int j = 0;
-	for (j = 100; j <= 200; j++)
-	{
-		if (panduan(j) == 1)
-		{
-			printf("是素数%d \n", j);
-		}
-		else
-		{
-			printf("不是素数%d \n", j);
-		}
-	}
-	return 0;
-}
+//#include <math.h>
+////写一个函数，可以判断一个数是不是素数
+//int panduan(int x)
+//{
+//	int i = 0;
+//	for (i = 2; i <= sqrt(x); i++)
+//	{
+//		if (x%i == 0)
+//			return 0;
+//		//else   //这样写不行，比如9，当i为2进入时，直接return 1；但3还没有测试
+//		//	return 1;
+//	}
+//	return 1;//这个代码其实就是和用if判断i>sqrt(i)一样，当一直测试到不满足条件时，也没有return 0；返回，说明这个数满足返回return 1的条件。
+//}
+//int main()
+//{
+//	int j = 0;
+//	for (j = 100; j <= 200; j++)
+//	{
+//		if (panduan(j) == 1)
+//		{
+//			printf("是素数%d \n", j);
+//		}
+//		else
+//		{
+//			printf("不是素数%d \n", j);
+//		}
+//	}
+//	return 0;
+//}
 
 
