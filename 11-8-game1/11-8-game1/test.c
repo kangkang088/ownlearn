@@ -9,21 +9,57 @@ void menu()
 }
 void game()//游戏的整个算法实现
 {
+	char ret = 0;	
 	//存放玩家和电脑走出的棋盘信息。
 	char board[ROW][COL] = {0};  //全部空格。
 	//棋盘初始化
 	InitBoard(board, ROW, COL);
 	//打印棋盘
 	DisplayBoard(board,ROW,COL);
+	//下棋
+	while (1)
+	{
+		//玩家下棋
+		playermove(board,ROW,COL);
+		DisplayBoard(board, ROW, COL);
+		//判断玩家是否赢
+		ret = iswin(board,ROW,COL);
+		if (ret != 'C')
+		{
+			break;
+		}
+		//电脑下棋
+		computermove(board, ROW, COL);
+		DisplayBoard(board, ROW, COL);
+		//判断电脑是否赢
+		ret = iswin(board,ROW,COL);
+		if (ret != 'C')
+		{
+			break;
+		}
+	}
+	if (ret == '*')
+	{
+		printf("玩家赢\n");
+	}
+	else if (ret == '#')
+	{
+		printf("电脑赢\n");
+	}
+	else
+	{
+		printf("平局\n");
+	}
 	
 
 }
 void test()
 {
 	int input = 0;
+	srand((unsigned int)time(NULL));
 	do
 	{
-		menu;
+		menu();
 		printf("请选择：");
 		scanf("%d", &input);
 		switch (input)
