@@ -54,7 +54,9 @@ void setmine(char mine[ROWS][COLS], int row, int col)
 
 
 
-static int get_mine_count(char mine[ROWS][COLS], int x, int y)
+
+
+ int get_mine_count(char mine[ROWS][COLS], int x, int y)
 {
 	return mine[x - 1][y] + mine[x - 1][y - 1] + mine[x][y - 1] +
 		mine[x + 1][y - 1] +
@@ -63,6 +65,35 @@ static int get_mine_count(char mine[ROWS][COLS], int x, int y)
 		mine[x][y + 1] +
 		mine[x - 1][y + 1] - 8 * '0';//字符'1'-'0'转化为数字。加起来就是雷数
 }
+void speed(char mine[ROWS][COLS], char show[ROWS][COLS], int x, int y)
+ {
+	 //连续排查雷的条件
+	 //1.该坐标不是雷
+	 //2.该坐标周围没有雷
+	 int ret = get_mine_count(mine, x, y);
+	 if (ret == 0)
+	 {
+		 show[x][y] = ' ';
+		 int i = 0;
+		 int j = 0;
+		 for (i = -1; i <= 1; i++)
+		 {
+			 for (j = -1; j <= 1; j++)
+			 {
+				 if ((x + i) > 0 && (y + j) > 0 && (x + i) < ROWS && (y + j) < COLS && show[x + i][y + j] == '*')
+				 {
+					 speed(mine, show, x + i, y + j);
+				 }
+			 }
+
+		 }
+	 }
+	 else
+	 {
+		 show[x][y] = ret + '0';
+	 }
+ }
+
 void findmine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
 {
 	//1.输入排查的坐标
@@ -89,8 +120,10 @@ void findmine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
 			else
 			{
 				//不是雷，统计该坐标周围有几个雷
-				int ret = get_mine_count(mine,x,y);//该函数只是为了支持findmine，所以不去头文件
-				show[x][y] = ret+'0'; //将数字转换为字符
+				//int ret = get_mine_count(mine, x, y);//该函数只是为了支持findmine，所以不去头文件
+				//show[x][y] = ret + '0'; //将数字转换为字符
+				//连续排查周围坐标
+				speed( mine, show, x, y);
 				//显示出排查的信息
 				displayboard(show, row, col);
 				win++;

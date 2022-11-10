@@ -19,3 +19,6 @@ void setmine(char mine[ROWS][COLS], int row, int col);
 
 //排查雷
 void findmine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col);
+
+//连续排查雷
+//void speed(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col);
