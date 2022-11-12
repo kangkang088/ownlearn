@@ -243,15 +243,105 @@
 
 
 //指针数组
-int main()
-{
-	int arr[10];//整型数组 - 存放整型的数组
-	char ch[5];//字符数组 - 存放字符的数组
+//int main()
+//{
+//	int arr[10];//整型数组 - 存放整型的数组
+//	char ch[5];//字符数组 - 存放字符的数组
+//
+//	//推演
+//	//指针数组 - 存放指针
+//	int* parr[5] = {0};//整型指针数组
+//	char* cpl[5] = {0};//字符指针数组
+//
+//	return 0;
+//}
 
-	//推演
-	//指针数组 - 存放指针
-	int* parr[5] = {0};//整型指针数组
-	char* cpl[5] = {0};//字符指针数组
 
-	return 0;
-}
+
+//结构体
+//struct A
+//{
+//	char c;
+//	int a;
+//	double d;
+//};
+//struct Stu
+//{
+//	//成员变量
+//	struct A sb; //嵌套结构体
+//	char name[20];
+//	int age;
+//	char id[20];
+//};
+//int main()
+//{
+//	struct Stu s = { {'w',4,3.14},"李明", 25, "190611323" }; //初始化，嵌套初始化
+//	return 0;
+//}
+
+
+
+//结构体成员的访问
+//struct A
+//{
+//	char c;
+//	int a;
+//	double d;
+//};
+//struct Stu
+//{
+//	//成员变量
+//	struct A sb; //嵌套结构体
+//	char name[20];
+//	int age;
+//	char id[20];
+//};
+//int main()
+//{
+//	struct Stu s = { { 'w', 4, 3.14 }, "李明", 25, "190611323" }; //初始化，嵌套初始化
+//	printf("%c\n", s.sb.c);
+//	struct  Stu* ps = &s;
+//	printf("%c\n", (*ps).sb.c); //. 
+//	printf("%c\n", ps->sb.c); //-> 指针用
+//	return 0;
+//}
+
+
+
+//结构体传参
+//struct A
+//{
+//	char c;
+//	int a;
+//	double d;
+//};
+//struct Stu
+//{
+//	//成员变量
+//	struct A sb; //嵌套结构体
+//	char name[20];
+//	int age;
+//	char id[20];
+//};
+//void print1(struct Stu t)
+//{
+//	printf("%c %d %lf %s %d %s\n", t.sb.c, t.sb.a, t.sb.d, t.name, t.age, t.id);
+//}
+//void print2(struct Stu* ps)
+//{
+//	printf("%c %d %lf %s %d %s\n", ps->sb.c, ps->sb.a, ps->sb.d, ps->name, ps->age, ps->id);
+//}
+//int main()
+//{
+//		struct Stu s = { { 'w', 4, 3.14 }, "李明", 25, "190611323" }; //初始化，嵌套初始化
+//		//写一个函数打印s的内容；
+//		print1(s);//传值调用  产生额外空间，函数不可改变参数
+//		print2(&s);//传址调用  省空间，函数可改变参数，效率高
+//		return 0;
+//}
+
+
+
+
+
+//实用调试技巧
