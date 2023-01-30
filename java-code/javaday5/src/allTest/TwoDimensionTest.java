@@ -14,6 +14,7 @@ public class TwoDimensionTest {
                 {25,45,65},
                 {11,66,99}
         };
+        System.out.println(rich.length);
         int sum = 0;
         for (int i = 0; i < rich.length; i++) {
             int[] rich1 = rich[i];
