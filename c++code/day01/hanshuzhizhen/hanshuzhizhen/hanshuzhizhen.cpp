@@ -6,13 +6,14 @@ using namespace std;
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
 // 调试程序: F5 或调试 >“开始调试”菜单
-void zs()
+void zs(string str)
 {
-	cout << "表白前翻跟头";
+	cout << str << "我喜欢你" << endl;
 }
-void show(void(*pf)())
+void show(void (*pf)(string))
 {
-	pf();
+	string str = "冰冰";
+	pf(str);
 }
 int main()
 {
