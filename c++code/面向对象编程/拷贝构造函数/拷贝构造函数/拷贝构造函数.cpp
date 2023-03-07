@@ -30,6 +30,10 @@ void CGirl::setvalue(string name, int age)
     m_name = name;
     m_age = age;
 }
+void func(CGirl g)
+{
+    g.show();
+}
 int main()
 {
     //四种常用的创建对象的方法
@@ -47,5 +51,10 @@ int main()
     girl1.show();
     /*delete girl2;
     delete girl3;*/
+
+
+    CGirl girl2(girl1);
+    func(girl2);//值传递方式调用函数，实参为对象，会调用拷贝构造函数
+    //相当于把对象girl2拷贝给函数的形参g
 
 }
