@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{85A10C03-BAA7-4F44-BD1D-F9B9E9BA9BED}</ProjectGuid>
+    <ProjectGuid>{E232A5BE-0B67-492C-BB62-FB97121FC51F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Day5</RootNamespace>
-    <AssemblyName>Day5</AssemblyName>
+    <RootNamespace>New关键字</RootNamespace>
+    <AssemblyName>New关键字</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,10 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameDemo1.cs" />
-    <Compile Include="Person.cs" />
+    <Compile Include="NewDemo1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="_面向对象Demo1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
