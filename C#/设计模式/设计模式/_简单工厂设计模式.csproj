@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8B424A64-3E79-4AF2-8D9C-157AC6A0CA59}</ProjectGuid>
+    <ProjectGuid>{19EBCA6B-F9F3-424F-99D9-D6FA759C2515}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>抽象类</RootNamespace>
-    <AssemblyName>抽象类</AssemblyName>
+    <RootNamespace>设计模式</RootNamespace>
+    <AssemblyName>设计模式</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,14 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Animals.cs" />
-    <Compile Include="Cat.cs" />
-    <Compile Include="Circle.cs" />
-    <Compile Include="Dog.cs" />
+    <Compile Include="Acer.cs" />
+    <Compile Include="Dell.cs" />
+    <Compile Include="IBM.cs" />
+    <Compile Include="Lenovo.cs" />
+    <Compile Include="NoteBook.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Shape.cs" />
-    <Compile Include="Square.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

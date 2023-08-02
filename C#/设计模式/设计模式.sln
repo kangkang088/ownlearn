@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_简单工厂设计模式", "设计模式\_简单工厂设计模式.csproj", "{19EBCA6B-F9F3-424F-99D9-D6FA759C2515}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19EBCA6B-F9F3-424F-99D9-D6FA759C2515}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19EBCA6B-F9F3-424F-99D9-D6FA759C2515}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19EBCA6B-F9F3-424F-99D9-D6FA759C2515}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19EBCA6B-F9F3-424F-99D9-D6FA759C2515}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DE5E85E0-5276-4739-BB45-71A9B38BFE8C}
+	EndGlobalSection
+EndGlobal
