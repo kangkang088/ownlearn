@@ -15,6 +15,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice", "Practice\Practi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "简单记事本应用程序", "简单记事本应用程序\简单记事本应用程序.csproj", "{8C8BBF33-2208-4C58-AEBB-31FF87BF4638}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "单选和多选控件", "单选和多选控件\单选和多选控件.csproj", "{B46ED088-6776-4158-B689-30FA39349AEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "老师或者学生", "老师或者学生\老师或者学生.csproj", "{0A8DA032-643F-4642-B570-360FA5233B1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDI窗体设计", "MDI窗体设计\MDI窗体设计.csproj", "{B1582811-5674-42ED-BB62-D309C1A5CA14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PictureBox控件", "PictureBox控件\PictureBox控件.csproj", "{5E077465-4ADC-4705-B915-8558B3E4B7AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "图片的切换和翻页效果", "图片的切换和翻页效果\图片的切换和翻页效果.csproj", "{FDC08210-4053-460D-A744-6F849A803E72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PictureBox和Timer的练习", "PictureBox和Timer的练习\PictureBox和Timer的练习.csproj", "{46800999-67D2-421E-9454-7B82CC9E5CDF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +57,30 @@ Global
 		{8C8BBF33-2208-4C58-AEBB-31FF87BF4638}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C8BBF33-2208-4C58-AEBB-31FF87BF4638}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C8BBF33-2208-4C58-AEBB-31FF87BF4638}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B46ED088-6776-4158-B689-30FA39349AEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B46ED088-6776-4158-B689-30FA39349AEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B46ED088-6776-4158-B689-30FA39349AEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B46ED088-6776-4158-B689-30FA39349AEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A8DA032-643F-4642-B570-360FA5233B1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A8DA032-643F-4642-B570-360FA5233B1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A8DA032-643F-4642-B570-360FA5233B1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A8DA032-643F-4642-B570-360FA5233B1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1582811-5674-42ED-BB62-D309C1A5CA14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1582811-5674-42ED-BB62-D309C1A5CA14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1582811-5674-42ED-BB62-D309C1A5CA14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1582811-5674-42ED-BB62-D309C1A5CA14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E077465-4ADC-4705-B915-8558B3E4B7AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E077465-4ADC-4705-B915-8558B3E4B7AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E077465-4ADC-4705-B915-8558B3E4B7AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E077465-4ADC-4705-B915-8558B3E4B7AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDC08210-4053-460D-A744-6F849A803E72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDC08210-4053-460D-A744-6F849A803E72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDC08210-4053-460D-A744-6F849A803E72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDC08210-4053-460D-A744-6F849A803E72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46800999-67D2-421E-9454-7B82CC9E5CDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46800999-67D2-421E-9454-7B82CC9E5CDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46800999-67D2-421E-9454-7B82CC9E5CDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46800999-67D2-421E-9454-7B82CC9E5CDF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

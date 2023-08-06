@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.确定ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.button2 = new System.Windows.Forms.Button();
             this.确定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.确定ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +55,12 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(101, 26);
             // 
+            // 确定ToolStripMenuItem1
+            // 
+            this.确定ToolStripMenuItem1.Name = "确定ToolStripMenuItem1";
+            this.确定ToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
+            this.确定ToolStripMenuItem1.Text = "确定";
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(421, 99);
@@ -63,13 +69,13 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "不爱";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             this.button2.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
             // 
-            // 确定ToolStripMenuItem1
+            // 确定ToolStripMenuItem
             // 
-            this.确定ToolStripMenuItem1.Name = "确定ToolStripMenuItem1";
-            this.确定ToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
-            this.确定ToolStripMenuItem1.Text = "确定";
+            this.确定ToolStripMenuItem.Name = "确定ToolStripMenuItem";
+            this.确定ToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
             // 
             // Form1
             // 

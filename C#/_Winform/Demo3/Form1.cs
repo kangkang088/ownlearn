@@ -36,5 +36,10 @@ namespace Demo3
             Random r = new Random();
             button2.Location = new Point(r.Next(0,x+1), r.Next(0,y+1));
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
