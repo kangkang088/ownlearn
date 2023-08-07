@@ -27,6 +27,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "图片的切换和翻页效
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PictureBox和Timer的练习", "PictureBox和Timer的练习\PictureBox和Timer的练习.csproj", "{46800999-67D2-421E-9454-7B82CC9E5CDF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webBrowser控件", "webBrowser控件\webBrowser控件.csproj", "{F292599E-4C1A-4C86-8C73-2EAE8BDB6B09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComboBox下拉框", "ComboBox\ComboBox下拉框.csproj", "{388E55E1-EBC7-402F-A286-47FFC26D4848}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComboBox日期选择器", "ComboBox日期选择器\ComboBox日期选择器.csproj", "{F4D72FF8-DCC1-4442-BB99-B80A9BEEBFC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +87,18 @@ Global
 		{46800999-67D2-421E-9454-7B82CC9E5CDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46800999-67D2-421E-9454-7B82CC9E5CDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46800999-67D2-421E-9454-7B82CC9E5CDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F292599E-4C1A-4C86-8C73-2EAE8BDB6B09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F292599E-4C1A-4C86-8C73-2EAE8BDB6B09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F292599E-4C1A-4C86-8C73-2EAE8BDB6B09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F292599E-4C1A-4C86-8C73-2EAE8BDB6B09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{388E55E1-EBC7-402F-A286-47FFC26D4848}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{388E55E1-EBC7-402F-A286-47FFC26D4848}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{388E55E1-EBC7-402F-A286-47FFC26D4848}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{388E55E1-EBC7-402F-A286-47FFC26D4848}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4D72FF8-DCC1-4442-BB99-B80A9BEEBFC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4D72FF8-DCC1-4442-BB99-B80A9BEEBFC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4D72FF8-DCC1-4442-BB99-B80A9BEEBFC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4D72FF8-DCC1-4442-BB99-B80A9BEEBFC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
