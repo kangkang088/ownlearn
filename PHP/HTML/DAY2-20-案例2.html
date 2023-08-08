@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <h1>注册信息</h1>
+        <h2>个人信息</h2>
+        姓名：<input type="text" placeholder="请输入真实姓名">
+        <br>
+        密码：<input type="password" placeholder = "请输入密码">
+        <br>
+        确认密码：<input type="password" placeholder="确认密码">
+        <br>
+        性别：<input type="radio" name="gender" id="man">
+        <label for="man">男</label>
+        <input type="radio" name="gender" id="woman">
+        <label for="woman">女</label>
+        <br>
+        居住城市：<select>
+            <option selected>上海</option>
+            <option value="">北京</option>
+            <option value="">天津</option>
+            <option value="">深圳</option>
+        </select>
+        <h2>教育经历</h2>
+        最高学历：<select>
+            <option selected>博士生</option>
+            <option value="">研究生</option>
+            <option value="">大学</option>
+            <option value="">高中</option>
+            <option value="">中学</option>
+            <option value="">小学</option>
+        </select>
+        <br>
+        学校名称：<input type="text">
+        <br>
+        所学专业：<input type="text">
+        <br>
+        在校时间：<select>
+            <option>1999</option>
+            <option value="">2000</option>
+            <option value="">2001</option>
+            <option value="">2002</option>
+            <option value="">2003</option>
+        </select>
+        --
+        <select>
+            <option value="">2008</option>
+            <option value="">2009</option>
+            <option value="">2010</option>
+            <option value="">2011</option>
+            <option value="">2012</option>
+        </select>
+        <br>
+        <h3>工作经历</h3>
+        公司名称：<input type="text">
+        <br>
+        工作描述：<br>
+        <textarea></textarea>
+        <br>
+        <input type="checkbox" id="read"> <label for="read">已阅读并同意以下协议：</label> <br>
+        <ul>
+            <li>
+                <a href="https://passport.baidu.com/v2/?login&u=https://tieba.baidu.com/pmc/feedback" target="_blank">《用户服务协议》</a>
+            </li>
+            <li>
+                <a href="https://www.baidu.com" target="_blank">《隐私政策》</a>
+            </li>
+        </ul>
+        <br><br><br>
+            <button type="submit">免费注册</button>
+            <button type="reset">重新填写</button>
+    </form>
+</body>
+</html>
