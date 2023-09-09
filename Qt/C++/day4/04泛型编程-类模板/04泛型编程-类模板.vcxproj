@@ -131,6 +131,16 @@
     <ClCompile Include="01类模板和函数模板的区别.cpp" />
     <ClCompile Include="02类模板中成员函数的创建时机.cpp" />
     <ClCompile Include="03类模板对象做函数参数.cpp" />
+    <ClCompile Include="04类模板与继承.cpp" />
+    <ClCompile Include="05类模板成员函数的类外实现.cpp" />
+    <ClCompile Include="06Person.cpp" />
+    <ClCompile Include="06类模板分文件编写.cpp" />
+    <ClCompile Include="07类模板与友元.cpp" />
+    <ClCompile Include="08类模板案例.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="06Person.hpp" />
+    <ClInclude Include="08MyArray.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
