@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01代码规范", "01代码规范\01代码规范.csproj", "{101139CC-4768-461B-8D71-0E86CCD14E19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02进程", "02进程\02进程.csproj", "{E03D8013-2668-4C70-90A7-4725F895A5C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03简单工厂设计模式", "03简单工厂设计模式\03简单工厂设计模式.csproj", "{8F962F04-22E9-4865-BA90-7D9AB0EAEFE1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{101139CC-4768-461B-8D71-0E86CCD14E19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{101139CC-4768-461B-8D71-0E86CCD14E19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{101139CC-4768-461B-8D71-0E86CCD14E19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{101139CC-4768-461B-8D71-0E86CCD14E19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E03D8013-2668-4C70-90A7-4725F895A5C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E03D8013-2668-4C70-90A7-4725F895A5C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E03D8013-2668-4C70-90A7-4725F895A5C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E03D8013-2668-4C70-90A7-4725F895A5C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F962F04-22E9-4865-BA90-7D9AB0EAEFE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F962F04-22E9-4865-BA90-7D9AB0EAEFE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F962F04-22E9-4865-BA90-7D9AB0EAEFE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F962F04-22E9-4865-BA90-7D9AB0EAEFE1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A77D2FF2-3719-469E-85DC-64EE011DBFDE}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01GDI初识-简单图形", "01GDI初识\01GDI初识-简单图形.csproj", "{14A7623D-BF33-4437-AB81-6C3F7F4FF640}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02绘制验证码并点击更换", "02绘制验证码并点击更换\02绘制验证码并点击更换.csproj", "{D2E203E9-9CBD-4D66-9F6C-22CCBCB9FE7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14A7623D-BF33-4437-AB81-6C3F7F4FF640}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14A7623D-BF33-4437-AB81-6C3F7F4FF640}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14A7623D-BF33-4437-AB81-6C3F7F4FF640}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14A7623D-BF33-4437-AB81-6C3F7F4FF640}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2E203E9-9CBD-4D66-9F6C-22CCBCB9FE7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2E203E9-9CBD-4D66-9F6C-22CCBCB9FE7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2E203E9-9CBD-4D66-9F6C-22CCBCB9FE7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2E203E9-9CBD-4D66-9F6C-22CCBCB9FE7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A0E2710D-F057-4995-9095-D2C8DD377F75}
+	EndGlobalSection
+EndGlobal

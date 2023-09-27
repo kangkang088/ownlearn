@@ -68,6 +68,7 @@
             this.button4.TabIndex = 21;
             this.button4.Text = "发送消息";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -125,8 +126,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 14;
-            this.button1.Text = "开始监听";
+            this.button1.Text = "连接";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox2
             // 
@@ -142,7 +144,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(172, 21);
             this.textBox1.TabIndex = 12;
-            this.textBox1.Text = "192.168.8.100";
+            this.textBox1.Text = "192.168.1.7";
             // 
             // Form1
             // 
@@ -163,6 +165,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

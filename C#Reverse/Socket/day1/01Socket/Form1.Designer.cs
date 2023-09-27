@@ -48,7 +48,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(172, 21);
             this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "192.168.11.58";
+            this.textBox1.Text = "192.168.1.7";
             // 
             // textBox2
             // 
@@ -108,6 +108,7 @@
             this.button2.TabIndex = 7;
             this.button2.Text = "选择";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -117,6 +118,7 @@
             this.button3.TabIndex = 8;
             this.button3.Text = "发送文件";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -126,6 +128,7 @@
             this.button4.TabIndex = 9;
             this.button4.Text = "发送消息";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -135,6 +138,7 @@
             this.button5.TabIndex = 10;
             this.button5.Text = "震动";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -164,6 +168,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
