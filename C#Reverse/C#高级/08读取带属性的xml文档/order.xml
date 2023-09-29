@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<order>
+  <customerName>康康</customerName>
+  <customerNumber>10000</customerNumber>
+  <items>
+    <orderItem name="码表" count="10" />
+    <orderItem name="码表" count="10" />
+    <orderItem name="码表" count="10" />
+  </items>
+</order>
