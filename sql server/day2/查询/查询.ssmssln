@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# SQL Server Management Studio Solution File, Format Version 19.00
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "01基本查询", "01基本查询\01基本查询.ssmssqlproj", "{18554C55-3CA7-4D1A-879F-C0F94FD8EDE8}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "02条件查询", "02条件查询\02条件查询.ssmssqlproj", "{EB4AF5F8-CC73-431E-96B1-4FFED435392D}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "03模糊查询", "03模糊查询\03模糊查询.ssmssqlproj", "{9BA78ABD-DADD-467A-9E54-D62464376DCB}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "04聚合函数", "04聚合函数\04聚合函数.ssmssqlproj", "{C62A0103-0057-461E-80DD-C050FFCFED81}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Default|Default = Default|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18554C55-3CA7-4D1A-879F-C0F94FD8EDE8}.Default|Default.ActiveCfg = Default
+		{EB4AF5F8-CC73-431E-96B1-4FFED435392D}.Default|Default.ActiveCfg = Default
+		{9BA78ABD-DADD-467A-9E54-D62464376DCB}.Default|Default.ActiveCfg = Default
+		{529D9E3E-03C0-4723-88A5-90807A94CB36}.Default|Default.ActiveCfg = Default
+		{C62A0103-0057-461E-80DD-C050FFCFED81}.Default|Default.ActiveCfg = Default
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C8E510D-1F7F-4814-BF4C-DEACB814F657}
+	EndGlobalSection
+EndGlobal

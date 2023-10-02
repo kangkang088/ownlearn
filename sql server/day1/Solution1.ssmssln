@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# SQL Server Management Studio Solution File, Format Version 19.00
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0806C546-21F4-4B69-8D1E-11E846E1E03D}"
+	ProjectSection(SolutionItems) = preProject
+		01建库.sql = 01建库.sql
+		02建表.sql = 02建表.sql
+		03修改表结构-添加列.sql = 03修改表结构-添加列.sql
+		04删除列.sql = 04删除列.sql
+		05修改列.sql = 05修改列.sql
+		06删除约束.sql = 06删除约束.sql
+		07添加约束.sql = 07添加约束.sql
+		08添加其他约束.sql = 08添加其他约束.sql
+		09插入数据.sql = 09插入数据.sql
+		10.1.sql = 10.1.sql
+		10修改和删除数据.sql = 10修改和删除数据.sql
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Default|Default = Default|Default
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EBC10A3E-02D4-4D3C-9D34-F9150D667033}
+	EndGlobalSection
+EndGlobal
