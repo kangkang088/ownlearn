@@ -11,6 +11,12 @@ Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "03模糊查询", "03模糊�
 EndProject
 Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "04聚合函数", "04聚合函数\04聚合函数.ssmssqlproj", "{C62A0103-0057-461E-80DD-C050FFCFED81}"
 EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "05分组查询", "05分组查询\05分组查询.ssmssqlproj", "{B2AFA656-81B3-494E-8D18-E5CA0D9672FB}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "06多表查询", "06多表查询\06多表查询.ssmssqlproj", "{BEFEFFDC-5D14-473C-B758-0573563BC569}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "07数据库设计", "07数据库设计\07数据库设计.ssmssqlproj", "{D5F7263B-3551-45A0-B242-EEE7340A8A06}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Default|Default = Default|Default
@@ -19,8 +25,11 @@ Global
 		{18554C55-3CA7-4D1A-879F-C0F94FD8EDE8}.Default|Default.ActiveCfg = Default
 		{EB4AF5F8-CC73-431E-96B1-4FFED435392D}.Default|Default.ActiveCfg = Default
 		{9BA78ABD-DADD-467A-9E54-D62464376DCB}.Default|Default.ActiveCfg = Default
-		{529D9E3E-03C0-4723-88A5-90807A94CB36}.Default|Default.ActiveCfg = Default
 		{C62A0103-0057-461E-80DD-C050FFCFED81}.Default|Default.ActiveCfg = Default
+		{B2AFA656-81B3-494E-8D18-E5CA0D9672FB}.Default|Default.ActiveCfg = Default
+		{BEFEFFDC-5D14-473C-B758-0573563BC569}.Default|Default.ActiveCfg = Default
+		{D5F7263B-3551-45A0-B242-EEE7340A8A06}.Default|Default.ActiveCfg = Default
+		{823BA8A6-25C7-4A03-A2AA-F5B9F0EC3E03}.Default|Default.ActiveCfg = Default
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
