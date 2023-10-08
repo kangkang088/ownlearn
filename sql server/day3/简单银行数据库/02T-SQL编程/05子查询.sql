@@ -53,7 +53,7 @@ inner join
 --做一个临时表，起名为Temp
 (select CardNo,COUNT(*) myCount from CardExchange group by CardNo) Temp
 on BankCard.CardNo = Temp.CardNo
-where Temp.myCount in 
+where Temp.myCount = 
 (
 select MAX(Temp.myCount) from (select CardNo,COUNT(*) myCount from CardExchange group by CardNo)Temp
 )
