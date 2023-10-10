@@ -25,6 +25,12 @@
           <AssociatedConnUserName />
           <FullPath>01建表.sql</FullPath>
         </FileNode>
+        <FileNode Name="02exec执行存储过程.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:WIN-OUL2TEGU6KO:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>WIN-OUL2TEGU6KO</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>02exec执行存储过程.sql</FullPath>
+        </FileNode>
       </Items>
     </LogicalFolder>
     <LogicalFolder Name="杂项" Type="3" Sorted="true">

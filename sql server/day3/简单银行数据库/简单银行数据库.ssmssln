@@ -7,14 +7,17 @@ Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "01基本结构", "01基本�
 EndProject
 Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "02T-SQL编程", "02T-SQL编程\02T-SQL编程.ssmssqlproj", "{7AC982E0-987A-42B8-9298-251D41CE9432}"
 EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "SQL Server 脚本1", "..\..\DBO.NET\SQL Server 脚本1\SQL Server 脚本1.ssmssqlproj", "{CECA09A8-475D-4B3B-9453-1A70B70CA931}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Default|Default = Default|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{71D0AD94-DEB9-4628-AFC9-222062D16611}.Default|Default.ActiveCfg = Default
-		{46CF9076-E6C3-442B-85A0-13E6F488B0DD}.Default|Default.ActiveCfg = Default
 		{7AC982E0-987A-42B8-9298-251D41CE9432}.Default|Default.ActiveCfg = Default
+		{208DD039-F66F-4B8B-85EA-D84962D2ACE3}.Default|Default.ActiveCfg = Default
+		{CECA09A8-475D-4B3B-9453-1A70B70CA931}.Default|Default.ActiveCfg = Default
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
