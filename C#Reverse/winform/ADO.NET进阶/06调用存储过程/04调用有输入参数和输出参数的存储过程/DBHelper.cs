@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
 
-namespace _04调用有输入参数和输出参数的存储过程
+namespace _06掉用有返回值的存储过程
 {
     internal class DBHelper
     {
