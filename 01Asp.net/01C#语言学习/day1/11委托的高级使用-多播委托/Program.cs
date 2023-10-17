@@ -11,9 +11,9 @@ namespace _11委托的高级使用_多播委托
     {
         static void Main(string[] args)
         {
-            Student student1 = new Student() { Id = 1,PenColor = ConsoleColor.Yellow};    
-            Student student2 = new Student() { Id = 2,PenColor = ConsoleColor.Green};    
-            Student student3 = new Student() { Id = 3,PenColor = ConsoleColor.Red};
+            Student student1 = new Student() { Id = 1, PenColor = ConsoleColor.Yellow };
+            Student student2 = new Student() { Id = 2, PenColor = ConsoleColor.Green };
+            Student student3 = new Student() { Id = 3, PenColor = ConsoleColor.Red };
 
             Action action1 = new Action(student1.DoHomeWork);
             Action action2 = new Action(student2.DoHomeWork);
@@ -31,7 +31,7 @@ namespace _11委托的高级使用_多播委托
         }
     }
     class Student
-    { 
+    {
         public int Id { get; set; }
         public ConsoleColor PenColor { get; set; }
 
@@ -40,7 +40,7 @@ namespace _11委托的高级使用_多播委托
             for (int i = 0; i < 5; i++)
             {
                 Console.ForegroundColor = this.PenColor;
-                Console.WriteLine("Studen {0} doing homework {1} hour(s)",this.Id,i);
+                Console.WriteLine("Studen {0} doing homework {1} hour(s)", this.Id, i);
                 Thread.Sleep(1000);
             }
         }
