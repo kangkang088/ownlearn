@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "书店管理系统", "书店管理系统\书店管理系统.csproj", "{C5FB330B-C193-4494-8B95-90C7102A4E58}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5FB330B-C193-4494-8B95-90C7102A4E58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5FB330B-C193-4494-8B95-90C7102A4E58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5FB330B-C193-4494-8B95-90C7102A4E58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5FB330B-C193-4494-8B95-90C7102A4E58}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {170ADED4-88A8-47BE-87AA-3107DF1AA765}
+	EndGlobalSection
+EndGlobal
