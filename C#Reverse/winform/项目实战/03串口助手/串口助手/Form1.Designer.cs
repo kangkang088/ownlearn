@@ -25,8 +25,8 @@
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             this.btnSend = new System.Windows.Forms.Button();
-            this.richTxtSend = new System.Windows.Forms.RichTextBox();
             this.richTxtReceive = new System.Windows.Forms.RichTextBox();
+            this.richTxtSend = new System.Windows.Forms.RichTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnOpenPort = new System.Windows.Forms.Button();
             this.DTRCheckBox = new System.Windows.Forms.CheckBox();
@@ -69,12 +69,29 @@
             this.receiveNum_ToolStripStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.clearNum_ToolStripStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtData1 = new System.Windows.Forms.TextBox();
+            this.txtData2 = new System.Windows.Forms.TextBox();
+            this.txtData3 = new System.Windows.Forms.TextBox();
+            this.txtData4 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtDataZhen = new System.Windows.Forms.TextBox();
+            this.startDataZhen = new System.Windows.Forms.CheckBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSend
@@ -85,16 +102,7 @@
             this.btnSend.TabIndex = 4;
             this.btnSend.Text = "手动发送";
             this.btnSend.UseVisualStyleBackColor = true;
-            // 
-            // richTxtSend
-            // 
-            this.richTxtSend.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.richTxtSend.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTxtSend.Location = new System.Drawing.Point(3, 17);
-            this.richTxtSend.Name = "richTxtSend";
-            this.richTxtSend.Size = new System.Drawing.Size(457, 436);
-            this.richTxtSend.TabIndex = 6;
-            this.richTxtSend.Text = "";
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // richTxtReceive
             // 
@@ -102,9 +110,21 @@
             this.richTxtReceive.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTxtReceive.Location = new System.Drawing.Point(3, 17);
             this.richTxtReceive.Name = "richTxtReceive";
-            this.richTxtReceive.Size = new System.Drawing.Size(454, 225);
-            this.richTxtReceive.TabIndex = 7;
+            this.richTxtReceive.Size = new System.Drawing.Size(457, 436);
+            this.richTxtReceive.TabIndex = 6;
             this.richTxtReceive.Text = "";
+            // 
+            // richTxtSend
+            // 
+            this.richTxtSend.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.richTxtSend.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTxtSend.Location = new System.Drawing.Point(3, 17);
+            this.richTxtSend.Name = "richTxtSend";
+            this.richTxtSend.Size = new System.Drawing.Size(454, 225);
+            this.richTxtSend.TabIndex = 7;
+            this.richTxtSend.Text = "";
+            this.richTxtSend.TextChanged += new System.EventHandler(this.richTxtSend_TextChanged);
+            this.richTxtSend.Leave += new System.EventHandler(this.richTxtSend_Leave);
             // 
             // groupBox1
             // 
@@ -206,6 +226,10 @@
             // stopBit_ComBox
             // 
             this.stopBit_ComBox.FormattingEnabled = true;
+            this.stopBit_ComBox.Items.AddRange(new object[] {
+            "1",
+            "1.5",
+            "2"});
             this.stopBit_ComBox.Location = new System.Drawing.Point(73, 124);
             this.stopBit_ComBox.Name = "stopBit_ComBox";
             this.stopBit_ComBox.Size = new System.Drawing.Size(168, 20);
@@ -214,6 +238,11 @@
             // dataBit_ComBox
             // 
             this.dataBit_ComBox.FormattingEnabled = true;
+            this.dataBit_ComBox.Items.AddRange(new object[] {
+            "5",
+            "6",
+            "7",
+            "8"});
             this.dataBit_ComBox.Location = new System.Drawing.Point(73, 98);
             this.dataBit_ComBox.Name = "dataBit_ComBox";
             this.dataBit_ComBox.Size = new System.Drawing.Size(168, 20);
@@ -222,6 +251,10 @@
             // checkBit_ComBox
             // 
             this.checkBit_ComBox.FormattingEnabled = true;
+            this.checkBit_ComBox.Items.AddRange(new object[] {
+            "NONE",
+            "ODD",
+            "EVEN"});
             this.checkBit_ComBox.Location = new System.Drawing.Point(73, 72);
             this.checkBit_ComBox.Name = "checkBit_ComBox";
             this.checkBit_ComBox.Size = new System.Drawing.Size(168, 20);
@@ -230,6 +263,10 @@
             // baud_ComBox
             // 
             this.baud_ComBox.FormattingEnabled = true;
+            this.baud_ComBox.Items.AddRange(new object[] {
+            "4800",
+            "9600",
+            "115200"});
             this.baud_ComBox.Location = new System.Drawing.Point(73, 46);
             this.baud_ComBox.Name = "baud_ComBox";
             this.baud_ComBox.Size = new System.Drawing.Size(168, 20);
@@ -238,11 +275,6 @@
             // port_ComBox
             // 
             this.port_ComBox.FormattingEnabled = true;
-            this.port_ComBox.Items.AddRange(new object[] {
-            "COM1",
-            "COM2",
-            "COM3",
-            "COM4"});
             this.port_ComBox.Location = new System.Drawing.Point(73, 20);
             this.port_ComBox.Name = "port_ComBox";
             this.port_ComBox.Size = new System.Drawing.Size(168, 20);
@@ -297,6 +329,7 @@
             this.btnStop.TabIndex = 11;
             this.btnStop.Text = "暂停";
             this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // btnClear
             // 
@@ -306,6 +339,7 @@
             this.btnClear.TabIndex = 11;
             this.btnClear.Text = "手动清空";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // hexReceiveCheckBox
             // 
@@ -316,6 +350,7 @@
             this.hexReceiveCheckBox.TabIndex = 9;
             this.hexReceiveCheckBox.Text = "十六进制";
             this.hexReceiveCheckBox.UseVisualStyleBackColor = true;
+            this.hexReceiveCheckBox.CheckedChanged += new System.EventHandler(this.hexReceiveCheckBox_CheckedChanged);
             // 
             // autoClearCheckBox
             // 
@@ -326,6 +361,7 @@
             this.autoClearCheckBox.TabIndex = 9;
             this.autoClearCheckBox.Text = "自动清空";
             this.autoClearCheckBox.UseVisualStyleBackColor = true;
+            this.autoClearCheckBox.CheckedChanged += new System.EventHandler(this.autoClearCheckBox_CheckedChanged);
             // 
             // groupBox3
             // 
@@ -395,6 +431,7 @@
             this.btnClearSend.TabIndex = 4;
             this.btnClearSend.Text = "清空发送";
             this.btnClearSend.UseVisualStyleBackColor = true;
+            this.btnClearSend.Click += new System.EventHandler(this.btnClearSend_Click);
             // 
             // hexSendCheckBox
             // 
@@ -405,6 +442,7 @@
             this.hexSendCheckBox.TabIndex = 9;
             this.hexSendCheckBox.Text = "十六进制";
             this.hexSendCheckBox.UseVisualStyleBackColor = true;
+            this.hexSendCheckBox.CheckedChanged += new System.EventHandler(this.hexSendCheckBox_CheckedChanged);
             // 
             // autoSendCheckBox
             // 
@@ -418,7 +456,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.richTxtSend);
+            this.groupBox4.Controls.Add(this.richTxtReceive);
             this.groupBox4.Location = new System.Drawing.Point(265, 12);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(463, 456);
@@ -428,7 +466,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.richTxtReceive);
+            this.groupBox5.Controls.Add(this.richTxtSend);
             this.groupBox5.Location = new System.Drawing.Point(268, 474);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(460, 245);
@@ -448,7 +486,7 @@
             this.clearNum_ToolStripStatus});
             this.statusStrip1.Location = new System.Drawing.Point(0, 722);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(736, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(922, 22);
             this.statusStrip1.TabIndex = 12;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -500,12 +538,164 @@
             // serialPort1
             // 
             this.serialPort1.PortName = "COM3";
+            this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.label14);
+            this.groupBox6.Controls.Add(this.label13);
+            this.groupBox6.Controls.Add(this.label12);
+            this.groupBox6.Controls.Add(this.startDataZhen);
+            this.groupBox6.Controls.Add(this.txtDataZhen);
+            this.groupBox6.Controls.Add(this.txtData4);
+            this.groupBox6.Controls.Add(this.txtData3);
+            this.groupBox6.Controls.Add(this.txtData2);
+            this.groupBox6.Controls.Add(this.txtData1);
+            this.groupBox6.Controls.Add(this.label11);
+            this.groupBox6.Controls.Add(this.label10);
+            this.groupBox6.Controls.Add(this.label9);
+            this.groupBox6.Controls.Add(this.label8);
+            this.groupBox6.Controls.Add(this.label7);
+            this.groupBox6.Location = new System.Drawing.Point(734, 12);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(183, 456);
+            this.groupBox6.TabIndex = 13;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "指令解析";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(7, 40);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(41, 12);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "label7";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(7, 67);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(41, 12);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "label7";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(7, 94);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 12);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "label7";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(7, 121);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(41, 12);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "label7";
+            // 
+            // txtData1
+            // 
+            this.txtData1.Location = new System.Drawing.Point(54, 37);
+            this.txtData1.Name = "txtData1";
+            this.txtData1.Size = new System.Drawing.Size(100, 21);
+            this.txtData1.TabIndex = 1;
+            // 
+            // txtData2
+            // 
+            this.txtData2.Location = new System.Drawing.Point(54, 64);
+            this.txtData2.Name = "txtData2";
+            this.txtData2.Size = new System.Drawing.Size(100, 21);
+            this.txtData2.TabIndex = 1;
+            // 
+            // txtData3
+            // 
+            this.txtData3.Location = new System.Drawing.Point(54, 91);
+            this.txtData3.Name = "txtData3";
+            this.txtData3.Size = new System.Drawing.Size(100, 21);
+            this.txtData3.TabIndex = 1;
+            // 
+            // txtData4
+            // 
+            this.txtData4.Location = new System.Drawing.Point(54, 118);
+            this.txtData4.Name = "txtData4";
+            this.txtData4.Size = new System.Drawing.Size(100, 21);
+            this.txtData4.TabIndex = 1;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(7, 160);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(41, 12);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "数据帧";
+            // 
+            // txtDataZhen
+            // 
+            this.txtDataZhen.Location = new System.Drawing.Point(9, 176);
+            this.txtDataZhen.Multiline = true;
+            this.txtDataZhen.Name = "txtDataZhen";
+            this.txtDataZhen.Size = new System.Drawing.Size(145, 67);
+            this.txtDataZhen.TabIndex = 2;
+            // 
+            // startDataZhen
+            // 
+            this.startDataZhen.AutoSize = true;
+            this.startDataZhen.Location = new System.Drawing.Point(9, 250);
+            this.startDataZhen.Name = "startDataZhen";
+            this.startDataZhen.Size = new System.Drawing.Size(108, 16);
+            this.startDataZhen.TabIndex = 3;
+            this.startDataZhen.Text = "启动数据帧接收";
+            this.startDataZhen.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label12.Location = new System.Drawing.Point(6, 278);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(52, 14);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "格式：";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label13.Location = new System.Drawing.Point(12, 298);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(131, 14);
+            this.label13.TabIndex = 4;
+            this.label13.Text = "7F+长度+数据+CRC";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label14.Location = new System.Drawing.Point(12, 328);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(165, 14);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "例：7f0431323334DE10";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 744);
+            this.ClientSize = new System.Drawing.Size(922, 744);
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -525,6 +715,8 @@
             this.groupBox5.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -532,8 +724,8 @@
 
         #endregion
         private System.Windows.Forms.Button btnSend;
-        private System.Windows.Forms.RichTextBox richTxtSend;
         private System.Windows.Forms.RichTextBox richTxtReceive;
+        private System.Windows.Forms.RichTextBox richTxtSend;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox stopBit_ComBox;
@@ -576,6 +768,22 @@
         private System.Windows.Forms.ToolStripStatusLabel receiveNum_ToolStripStatus;
         private System.Windows.Forms.ToolStripStatusLabel clearNum_ToolStripStatus;
         private System.IO.Ports.SerialPort serialPort1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.TextBox txtData4;
+        private System.Windows.Forms.TextBox txtData3;
+        private System.Windows.Forms.TextBox txtData2;
+        private System.Windows.Forms.TextBox txtData1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.CheckBox startDataZhen;
+        private System.Windows.Forms.TextBox txtDataZhen;
+        private System.Windows.Forms.Label label11;
     }
 }
 
