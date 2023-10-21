@@ -13,6 +13,7 @@ using System.Windows.Forms;
 
 namespace 串口助手 {
     public partial class Form1 : Form {
+        public TransmitData transmitData;
         public Form1() {
             InitializeComponent();
             Control.CheckForIllegalCrossThreadCalls = false;
@@ -40,6 +41,16 @@ namespace 串口助手 {
             this.dataBit_ComBox.SelectedIndex = 3;
             this.stopBit_ComBox.SelectedIndex = 0;
             //EncodingInfo[] encodingInfos = Encoding.GetEncodings();
+
+            Form2 form2 = new Form2();
+            transmitData = form2.ReveiveData;//窗体2接收窗体1的值
+            form2.TransmitSend = sendBytes;//窗体1接收窗体2的值
+            form2.Show();
+        }
+
+        private void sendBytes(byte[] data) {
+            serialPort1.Write(data, 0, data.Length);
+            sendDataLength += data.Length;
         }
 
 
@@ -103,6 +114,8 @@ namespace 串口助手 {
             receiveBuffer.AddRange(dataTmp);//将读取到的数据存入集合方便其他处理
 
             receiveBufferLength += dataTmp.Length;//实时更新接收的实际字节数
+
+            transmitData?.Invoke(dataTmp);   //?.  如果transmitData不等于null，就执行
 
             //异步-将辅助线程（上面处理数据用的）的数据更新到主线程UI界面（跨线程）
             this.Invoke(new EventHandler(delegate {
@@ -193,6 +206,7 @@ namespace 串口助手 {
             }
             return ret;
         }
+
 
         //暂停接收或开始接收
         private bool isReceive = true;
