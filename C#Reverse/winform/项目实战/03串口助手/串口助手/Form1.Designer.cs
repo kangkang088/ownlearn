@@ -71,20 +71,21 @@
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtData1 = new System.Windows.Forms.TextBox();
-            this.txtData2 = new System.Windows.Forms.TextBox();
-            this.txtData3 = new System.Windows.Forms.TextBox();
-            this.txtData4 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtDataZhen = new System.Windows.Forms.TextBox();
-            this.startDataZhen = new System.Windows.Forms.CheckBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.startDataZhen = new System.Windows.Forms.CheckBox();
+            this.txtDataZhen = new System.Windows.Forms.TextBox();
+            this.txtData4 = new System.Windows.Forms.TextBox();
+            this.txtData3 = new System.Windows.Forms.TextBox();
+            this.txtData2 = new System.Windows.Forms.TextBox();
+            this.txtData1 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -167,6 +168,7 @@
             this.DTRCheckBox.TabIndex = 9;
             this.DTRCheckBox.Text = "DTR";
             this.DTRCheckBox.UseVisualStyleBackColor = true;
+            this.DTRCheckBox.CheckedChanged += new System.EventHandler(this.DTRCheckBox_CheckedChanged);
             // 
             // RTSCheckBox
             // 
@@ -177,6 +179,7 @@
             this.RTSCheckBox.TabIndex = 9;
             this.RTSCheckBox.Text = "RTS";
             this.RTSCheckBox.UseVisualStyleBackColor = true;
+            this.RTSCheckBox.CheckedChanged += new System.EventHandler(this.RTSCheckBox_CheckedChanged);
             // 
             // label5
             // 
@@ -311,6 +314,7 @@
             this.btnSelectPath.TabIndex = 11;
             this.btnSelectPath.Text = "选择路径";
             this.btnSelectPath.UseVisualStyleBackColor = true;
+            this.btnSelectPath.Click += new System.EventHandler(this.btnSelectPath_Click);
             // 
             // btnSaveData
             // 
@@ -320,6 +324,7 @@
             this.btnSaveData.TabIndex = 11;
             this.btnSaveData.Text = "保存数据";
             this.btnSaveData.UseVisualStyleBackColor = true;
+            this.btnSaveData.Click += new System.EventHandler(this.btnSaveData_Click);
             // 
             // btnStop
             // 
@@ -413,6 +418,7 @@
             this.btnOpenFile.TabIndex = 4;
             this.btnOpenFile.Text = "打开文件";
             this.btnOpenFile.UseVisualStyleBackColor = true;
+            this.btnOpenFile.Click += new System.EventHandler(this.btnOpenFile_Click);
             // 
             // btnSendFile
             // 
@@ -422,6 +428,7 @@
             this.btnSendFile.TabIndex = 4;
             this.btnSendFile.Text = "发送文件";
             this.btnSendFile.UseVisualStyleBackColor = true;
+            this.btnSendFile.Click += new System.EventHandler(this.btnSendFile_Click);
             // 
             // btnClearSend
             // 
@@ -453,6 +460,7 @@
             this.autoSendCheckBox.TabIndex = 9;
             this.autoSendCheckBox.Text = "自动发送";
             this.autoSendCheckBox.UseVisualStyleBackColor = true;
+            this.autoSendCheckBox.CheckedChanged += new System.EventHandler(this.autoSendCheckBox_CheckedChanged);
             // 
             // groupBox4
             // 
@@ -534,6 +542,7 @@
             this.clearNum_ToolStripStatus.Name = "clearNum_ToolStripStatus";
             this.clearNum_ToolStripStatus.Size = new System.Drawing.Size(56, 17);
             this.clearNum_ToolStripStatus.Text = "清空计数";
+            this.clearNum_ToolStripStatus.Click += new System.EventHandler(this.clearNum_ToolStripStatus_Click);
             // 
             // serialPort1
             // 
@@ -568,106 +577,15 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "指令解析";
             // 
-            // label7
+            // label14
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 40);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 12);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "label7";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(7, 67);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(41, 12);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "label7";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(7, 94);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 12);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "label7";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(7, 121);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 12);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "label7";
-            // 
-            // txtData1
-            // 
-            this.txtData1.Location = new System.Drawing.Point(54, 37);
-            this.txtData1.Name = "txtData1";
-            this.txtData1.Size = new System.Drawing.Size(100, 21);
-            this.txtData1.TabIndex = 1;
-            // 
-            // txtData2
-            // 
-            this.txtData2.Location = new System.Drawing.Point(54, 64);
-            this.txtData2.Name = "txtData2";
-            this.txtData2.Size = new System.Drawing.Size(100, 21);
-            this.txtData2.TabIndex = 1;
-            // 
-            // txtData3
-            // 
-            this.txtData3.Location = new System.Drawing.Point(54, 91);
-            this.txtData3.Name = "txtData3";
-            this.txtData3.Size = new System.Drawing.Size(100, 21);
-            this.txtData3.TabIndex = 1;
-            // 
-            // txtData4
-            // 
-            this.txtData4.Location = new System.Drawing.Point(54, 118);
-            this.txtData4.Name = "txtData4";
-            this.txtData4.Size = new System.Drawing.Size(100, 21);
-            this.txtData4.TabIndex = 1;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(7, 160);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 12);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "数据帧";
-            // 
-            // txtDataZhen
-            // 
-            this.txtDataZhen.Location = new System.Drawing.Point(9, 176);
-            this.txtDataZhen.Multiline = true;
-            this.txtDataZhen.Name = "txtDataZhen";
-            this.txtDataZhen.Size = new System.Drawing.Size(145, 67);
-            this.txtDataZhen.TabIndex = 2;
-            // 
-            // startDataZhen
-            // 
-            this.startDataZhen.AutoSize = true;
-            this.startDataZhen.Location = new System.Drawing.Point(9, 250);
-            this.startDataZhen.Name = "startDataZhen";
-            this.startDataZhen.Size = new System.Drawing.Size(108, 16);
-            this.startDataZhen.TabIndex = 3;
-            this.startDataZhen.Text = "启动数据帧接收";
-            this.startDataZhen.UseVisualStyleBackColor = true;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label12.Location = new System.Drawing.Point(6, 278);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(52, 14);
-            this.label12.TabIndex = 4;
-            this.label12.Text = "格式：";
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label14.Location = new System.Drawing.Point(12, 328);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(165, 14);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "例：7f0431323334DE10";
             // 
             // label13
             // 
@@ -680,15 +598,110 @@
             this.label13.TabIndex = 4;
             this.label13.Text = "7F+长度+数据+CRC";
             // 
-            // label14
+            // label12
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label14.Location = new System.Drawing.Point(12, 328);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(165, 14);
-            this.label14.TabIndex = 4;
-            this.label14.Text = "例：7f0431323334DE10";
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label12.Location = new System.Drawing.Point(6, 278);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(52, 14);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "格式：";
+            // 
+            // startDataZhen
+            // 
+            this.startDataZhen.AutoSize = true;
+            this.startDataZhen.Location = new System.Drawing.Point(9, 250);
+            this.startDataZhen.Name = "startDataZhen";
+            this.startDataZhen.Size = new System.Drawing.Size(108, 16);
+            this.startDataZhen.TabIndex = 3;
+            this.startDataZhen.Text = "启动数据帧接收";
+            this.startDataZhen.UseVisualStyleBackColor = true;
+            // 
+            // txtDataZhen
+            // 
+            this.txtDataZhen.Location = new System.Drawing.Point(9, 176);
+            this.txtDataZhen.Multiline = true;
+            this.txtDataZhen.Name = "txtDataZhen";
+            this.txtDataZhen.Size = new System.Drawing.Size(145, 67);
+            this.txtDataZhen.TabIndex = 2;
+            // 
+            // txtData4
+            // 
+            this.txtData4.Location = new System.Drawing.Point(54, 118);
+            this.txtData4.Name = "txtData4";
+            this.txtData4.Size = new System.Drawing.Size(100, 21);
+            this.txtData4.TabIndex = 1;
+            // 
+            // txtData3
+            // 
+            this.txtData3.Location = new System.Drawing.Point(54, 91);
+            this.txtData3.Name = "txtData3";
+            this.txtData3.Size = new System.Drawing.Size(100, 21);
+            this.txtData3.TabIndex = 1;
+            // 
+            // txtData2
+            // 
+            this.txtData2.Location = new System.Drawing.Point(54, 64);
+            this.txtData2.Name = "txtData2";
+            this.txtData2.Size = new System.Drawing.Size(100, 21);
+            this.txtData2.TabIndex = 1;
+            // 
+            // txtData1
+            // 
+            this.txtData1.Location = new System.Drawing.Point(54, 37);
+            this.txtData1.Name = "txtData1";
+            this.txtData1.Size = new System.Drawing.Size(100, 21);
+            this.txtData1.TabIndex = 1;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(7, 160);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(41, 12);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "数据帧";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(7, 121);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(41, 12);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "label7";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(7, 94);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 12);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "label7";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(7, 67);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(41, 12);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "label7";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(7, 40);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(41, 12);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "label7";
+            // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // Form1
             // 
@@ -784,6 +797,7 @@
         private System.Windows.Forms.CheckBox startDataZhen;
         private System.Windows.Forms.TextBox txtDataZhen;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Timer timer2;
     }
 }
 

@@ -18,8 +18,10 @@ namespace _01DI {
                     ITestService test2 = sc.ServiceProvider.GetService<ITestService>();
                     test2.Name = "tom";
                     test2.SayHi();
-                    ITestService test3 = sp.GetService<ITestService>();
-                    Console.WriteLine(ReferenceEquals(test2, test3));
+                    ITestService test3 = sc.ServiceProvider.GetService<ITestService>();
+                    test3.Name = "jim";
+                    test3.SayHi();
+                    //Console.WriteLine(ReferenceEquals(test2, test3));
                 }
             }
         }

@@ -14,6 +14,10 @@ using System.Windows.Forms;
 namespace 串口助手 {
     public partial class Form1 : Form {
         public TransmitData transmitData;
+
+        public event TransmitDataEventHandler transmitData2;
+
+        private DecodedDataContext dataContext;
         public Form1() {
             InitializeComponent();
             Control.CheckForIllegalCrossThreadCalls = false;
@@ -43,18 +47,31 @@ namespace 串口助手 {
             //EncodingInfo[] encodingInfos = Encoding.GetEncodings();
 
             Form2 form2 = new Form2();
-            transmitData = form2.ReveiveData;//窗体2接收窗体1的值
-            form2.TransmitSend = sendBytes;//窗体1接收窗体2的值
+            //transmitData = form2.ReveiveData;//窗体2接收窗体1的值-用委托
+            transmitData2 += form2.receiveData2;//窗体2接收窗体1的值-用事件
+            //form2.TransmitSend = sendBytes;//窗体1接收窗体2的值-委托
+            form2.TransmitSend2 += sendbytes2;////窗体1接收窗体2的值-用事件
             form2.Show();
+
+            dataContext = new DecodedDataContext(new SimpleDecodedDataFrame());
+            //dataContext = new DecodedDataContext(new ModbusDecodedData());
+
+        }
+        //事件响应
+        private void sendbytes2(object sender, TransmitEventArgs eventArgs) {
+            serialPort1.Write(eventArgs.data, 0, eventArgs.data.Length);
+            sendDataLength += eventArgs.data.Length;
         }
 
-        private void sendBytes(byte[] data) {
-            serialPort1.Write(data, 0, data.Length);
-            sendDataLength += data.Length;
-        }
+        //委托
+        //private void sendBytes(byte[] data) {
+        //    serialPort1.Write(data, 0, data.Length);
+        //    sendDataLength += data.Length;
+        //}
 
 
         //打开或关闭串口
+
         private bool isOpen = false;
         private void btnOpenPort_Click(object sender, EventArgs e) {
             try {
@@ -100,9 +117,9 @@ namespace 串口助手 {
 
         private Queue<byte> bufferQueue = new Queue<byte>();//数据帧解析队列
 
-        private bool isHeadReceive = false;//帧头数据，默认为false（假设当前数据不是从想要的位置开始的），所以当为true时，队列必定是经过处理的
+        //private bool isHeadReceive = false;//帧头数据，默认为false（假设当前数据不是从想要的位置开始的），所以当为true时，队列必定是经过处理的
 
-        private int frameLength = 0;//帧长度
+        //private int frameLength = 0;//帧长度
         private void serialPort1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e) {
             //接收数据的处理
             if (isReceive == false) return;
@@ -116,6 +133,7 @@ namespace 串口助手 {
             receiveBufferLength += dataTmp.Length;//实时更新接收的实际字节数
 
             transmitData?.Invoke(dataTmp);   //?.  如果transmitData不等于null，就执行
+            transmitData2?.Invoke(this, new TransmitEventArgs { data = dataTmp });
 
             //异步-将辅助线程（上面处理数据用的）的数据更新到主线程UI界面（跨线程）
             this.Invoke(new EventHandler(delegate {
@@ -140,49 +158,66 @@ namespace 串口助手 {
                     }
                 }
                 else { //数据帧解析  queue队列（先进先出） 帧 = 0x7f（帧头） + 长度 + 数据 + CRC（2个字节） 
-                    foreach (byte item in dataTmp) { 
+                    foreach (byte item in dataTmp) {
                         //入列
                         bufferQueue.Enqueue(item);//把数据添加到队列中
                     }
-                    if (isHeadReceive == false) { //从帧头开始接收数据，如果当前开始的数据不是帧头的数据，全部去掉
-                        foreach (byte item in bufferQueue) {
-                            if (item != 0x7f) {
-                                bufferQueue.Dequeue();//出列-循环去掉数据
-                            }
-                            else { 
-                                isHeadReceive = true;//接收到帧头，把帧头标识设为true表示当前队列是从帧头开始的。停止循环
-                                break;//队列（以帧头开始）处理完毕
-                            }
+                    byte[] frameData = dataContext.GetDataFrame(bufferQueue);
+                    if (frameData != null) {
+                        Console.WriteLine($"show the data in frameData{Transform.ToHexString(frameData)}");
+                        txtDataZhen.Text = Transform.ToHexString(frameData);//拿到正确帧并显示（默认十六进制）
+                        txtData1.Text = String.Format("{0:X2}", frameData[2]);
+                        txtData2.Text = String.Format("{0:X2}", frameData[3]);
+                        txtData3.Text = String.Format("{0:X2}", frameData[4]);
+                        txtData4.Text = String.Format("{0:X2}", frameData[5]);
+                        for (int i = 0; i < frameData.Length; i++) {
+                            bufferQueue.Dequeue();
                         }
                     }
-                    if (isHeadReceive == true) { //到达帧头了
-                        //判断是否有数据帧长度，如果队列长度就是一，说明只有一个帧头
-                        if (bufferQueue.Count >= 2) {
-                            frameLength = bufferQueue.ToArray()[1];//拿到帧包含的数据的长度
-                            //获取数据（一帧完整的数据长度的判断，不代表数据是正确的，还需要校验）
-                            if (bufferQueue.Count >= 1 + 1 + frameLength + 2) {
-                                byte[] frameBuffer = new byte[1 + 1 + frameLength + 2];//将待校验的数据帧存入字节数据
-                                Array.Copy(bufferQueue.ToArray(),0,frameBuffer,0,frameBuffer.Length);
-                                //校验
-                                if (crc_check(frameBuffer)) {
-                                    Console.WriteLine("frame is check correctly!");
-                                    txtDataZhen.Text = Transform.ToHexString(frameBuffer);//拿到正确帧并显示（默认十六进制）
-                                    txtData1.Text = String.Format("{0:X2}", frameBuffer[2]);
-                                    txtData2.Text = String.Format("{0:X2}", frameBuffer[3]);
-                                    txtData3.Text = String.Format("{0:X2}", frameBuffer[4]);
-                                    txtData4.Text = String.Format("{0:X2}", frameBuffer[5]);
-                                }
-                                else {
-                                    //无效数据
-                                    Console.WriteLine("bad frame,drop it!");
-                                }
-                                for (int i = 0; i < 1 + 1 + frameLength + 2; i++) { 
-                                    bufferQueue.Dequeue() ;//不论数据是否正确，都要出列
-                                }
-                                isHeadReceive = false;//重置帧头标识。重新处理队列
-                            }
-                        }
-                    }
+
+
+                    #region 高耦合度解析
+                    //耦合度很高，解析数据帧的操作和解析数据帧的算法耦合度很高
+                    //if (isHeadReceive == false) { //从帧头开始接收数据，如果当前开始的数据不是帧头的数据，全部去掉
+                    //    foreach (byte item in bufferQueue) {
+                    //        if (item != 0x7f) {
+                    //            bufferQueue.Dequeue();//出列-循环去掉数据
+                    //        }
+                    //        else { 
+                    //            isHeadReceive = true;//接收到帧头，把帧头标识设为true表示当前队列是从帧头开始的。停止循环
+                    //            break;//队列（以帧头开始）处理完毕
+                    //        }
+                    //    }
+                    //}
+                    //if (isHeadReceive == true) { //到达帧头了
+                    //    //判断是否有数据帧长度，如果队列长度就是一，说明只有一个帧头
+                    //    if (bufferQueue.Count >= 2) {
+                    //        frameLength = bufferQueue.ToArray()[1];//拿到帧包含的数据的长度
+                    //        //获取数据（一帧完整的数据长度的判断，不代表数据是正确的，还需要校验）
+                    //        if (bufferQueue.Count >= 1 + 1 + frameLength + 2) {
+                    //            byte[] frameBuffer = new byte[1 + 1 + frameLength + 2];//将待校验的数据帧存入字节数据
+                    //            Array.Copy(bufferQueue.ToArray(),0,frameBuffer,0,frameBuffer.Length);
+                    //            //校验
+                    //            if (crc_check(frameBuffer)) {
+                    //                Console.WriteLine("frame is check correctly!");
+                    //                txtDataZhen.Text = Transform.ToHexString(frameBuffer);//拿到正确帧并显示（默认十六进制）
+                    //                txtData1.Text = String.Format("{0:X2}", frameBuffer[2]);
+                    //                txtData2.Text = String.Format("{0:X2}", frameBuffer[3]);
+                    //                txtData3.Text = String.Format("{0:X2}", frameBuffer[4]);
+                    //                txtData4.Text = String.Format("{0:X2}", frameBuffer[5]);
+                    //            }
+                    //            else {
+                    //                //无效数据
+                    //                Console.WriteLine("bad frame,drop it!");
+                    //            }
+                    //            for (int i = 0; i < 1 + 1 + frameLength + 2; i++) { 
+                    //                bufferQueue.Dequeue() ;//不论数据是否正确，都要出列
+                    //            }
+                    //            isHeadReceive = false;//重置帧头标识。重新处理队列
+                    //        }
+                    //    }
+                    //}
+                    #endregion
                 }
 
             }));
@@ -191,21 +226,21 @@ namespace 串口助手 {
             //richTxtReceive.AppendText(dataReceive); 
         }
         //校验方法
-        private bool crc_check(byte[] frameBuffer) {
-            //解析帧--考虑大小端问题
-            /*大端模式：是指数据的高字节保存在内存的低地址中，而数据的低字节保存在内存的高地址中，这样的存储模式有点儿类似于把数据当作字符串顺序处理。地址由小向大增加，而数据从高位往低位放；这和我们的阅读习惯一致。
-              小端模式：是指数据的高字节保存在内存的高地址中,而数据的低字节保存在内存的低地址中，这种存储模式将地址的高低和数据位权有效地结合起来，高
-              地址部分权值高，低地址部分权值低。*/
+        //private bool crc_check(byte[] frameBuffer) {
+        //    //解析帧--考虑大小端问题
+        //    /*大端模式：是指数据的高字节保存在内存的低地址中，而数据的低字节保存在内存的高地址中，这样的存储模式有点儿类似于把数据当作字符串顺序处理。地址由小向大增加，而数据从高位往低位放；这和我们的阅读习惯一致。
+        //      小端模式：是指数据的高字节保存在内存的高地址中,而数据的低字节保存在内存的低地址中，这种存储模式将地址的高低和数据位权有效地结合起来，高
+        //      地址部分权值高，低地址部分权值低。*/
 
-            bool ret = false;//校验位检测标识
-            byte[] temp =new byte[frameBuffer.Length - 2];//获取数据帧，去除CRC长度
-            Array.Copy(frameBuffer,0,temp,0,temp.Length);
-            byte[] crcData = DataCheck.DataCrc16_Ccitt(temp, DataCheck.BigOrLittle.BigEndian);//获取指定校验方法的校验位
-            if (crcData[0] == frameBuffer[frameBuffer.Length - 2] && crcData[1] == frameBuffer[frameBuffer.Length - 1]) { 
-                ret = true;//校验位正确
-            }
-            return ret;
-        }
+        //    bool ret = false;//校验位检测标识
+        //    byte[] temp = new byte[frameBuffer.Length - 2];//获取数据帧，去除CRC长度
+        //    Array.Copy(frameBuffer, 0, temp, 0, temp.Length);
+        //    byte[] crcData = DataCheck.DataCrc16_Ccitt(temp, DataCheck.BigOrLittle.BigEndian);//获取指定校验方法的校验位
+        //    if (crcData[0] == frameBuffer[frameBuffer.Length - 2] && crcData[1] == frameBuffer[frameBuffer.Length - 1]) {
+        //        ret = true;//校验位正确
+        //    }
+        //    return ret;
+        //}
 
 
         //暂停接收或开始接收
@@ -225,16 +260,14 @@ namespace 串口助手 {
             if (richTxtReceive.Text == "") return;
             //十六进制显示
             if (hexReceiveCheckBox.Checked == true) {
-                richTxtReceive.Text = Transform.ToHexString(receiveBuffer.ToArray()," ");
+                richTxtReceive.Text = Transform.ToHexString(receiveBuffer.ToArray(), " ");
             }
             else {
-                richTxtReceive.Text = Encoding.GetEncoding("gb2312").GetString(receiveBuffer.ToArray()).Replace("\0","\\0");
+                richTxtReceive.Text = Encoding.GetEncoding("gb2312").GetString(receiveBuffer.ToArray()).Replace("\0", "\\0");
             }
         }
         //接收区清空
         private void btnClear_Click(object sender, EventArgs e) {
-            MessageBox.Show(sender.ToString());
-            MessageBox.Show(e.ToString());
             receiveBuffer.Clear();
             receiveBufferLength = 0;
             receiveNum_ToolStripStatus.Text = "";
@@ -242,7 +275,7 @@ namespace 串口助手 {
         }
         //接收区自动清空
         private void autoClearCheckBox_CheckedChanged(object sender, EventArgs e) {
-            if (autoClearCheckBox.Checked == true) { 
+            if (autoClearCheckBox.Checked == true) {
                 timer1.Start();
             }
         }
@@ -256,8 +289,7 @@ namespace 串口助手 {
                 receiveNum_ToolStripStatus.Text = "";
                 richTxtReceive.Text = string.Empty;
             }
-            else
-            {
+            else {
                 timer1.Stop();
             }
         }
@@ -319,8 +351,134 @@ namespace 串口助手 {
             sendDataLength = 0;
             sendNum_ToolStripStatus.Text = string.Empty;
         }
+        //自动发送
+        private void autoSendCheckBox_CheckedChanged(object sender, EventArgs e) {
+            if (serialPort1.IsOpen == false && autoSendCheckBox.Checked == true) {
+                autoSendCheckBox.Checked = false;
+                if (timer2 != null) {
+                    timer2.Enabled = false;
+                    timer2.Stop();
+                    timer2 = null;
+                }
+                MessageBox.Show("串口未打开，发送失败");
+                return;
+            }
+            if (serialPort1.IsOpen == true && autoSendCheckBox.Checked == true) {
+                txtTimeOfSend.Enabled = false;
+                btnSend.Enabled = false;
+                int i = Convert.ToInt32(txtTimeOfSend.Text);
+                if (i < 10 || i < 60 * 1000) {
+                    i = 1000;
+                    txtTimeOfSend.Text = i.ToString();
+                    MessageBox.Show("自动发送数据的周期范围在10-60000毫秒");
+                }
+                timer2.Interval = i;
+                timer2.Start();
+            }
+            else {
+                btnSend.Enabled = true;
+                txtTimeOfSend.Enabled = true;
+                if (timer2 != null) {
+                    timer2.Stop();
+                    timer2 = null;
+                }
+            }
+        }
 
+        private void timer2_Tick(object sender, EventArgs e) {
+            if (richTxtSend.Text != "" && serialPort1.IsOpen == true) {
+                Console.WriteLine(Transform.ToHexString(sendBuffer.ToArray()));
+                sendData();
+            }
+            else {
+                statusStrip1.Text = "请先输入发送数据";
+                Console.WriteLine("The data should not be null and port must be open!!");
+            }
+        }
+        //清空计数
+        private void clearNum_ToolStripStatus_Click(object sender, EventArgs e) {
+            sendBuffer.Clear();
+            sendDataLength = 0;
+            sendNum_ToolStripStatus.Text = string.Empty;
+            receiveBuffer.Clear();
+            receiveBufferLength = 0;
+            receiveNum_ToolStripStatus.Text = "";
+        }
 
+        private void RTSCheckBox_CheckedChanged(object sender, EventArgs e) {
+            if (RTSCheckBox.Checked == true) {
+                serialPort1.RtsEnable = true;
+            }
+            else {
+                serialPort1.RtsEnable = false;
+            }
+        }
 
+        private void DTRCheckBox_CheckedChanged(object sender, EventArgs e) {
+            if (DTRCheckBox.Checked == true) {
+                serialPort1.DtrEnable = true;
+            }
+            else {
+                serialPort1.DtrEnable = false;
+            }
+        }
+
+        private void btnSelectPath_Click(object sender, EventArgs e) {
+            FolderBrowserDialog dialog = new FolderBrowserDialog();
+            if (dialog.ShowDialog() == DialogResult.OK) {
+                txtReecive.Text = dialog.SelectedPath;
+            }
+        }
+
+        private void btnSaveData_Click(object sender, EventArgs e) {
+            if (txtReecive.Text == "") {
+                return;
+            }
+            string fileName = txtReecive.Text + "\\" + DateTime.Now.ToString("yyyyMMddhhmmss") + ".txt";
+            StreamWriter streamWriter = new StreamWriter(fileName);
+            streamWriter.Write(txtReecive.Text);
+            streamWriter.Flush();
+            streamWriter.Close();
+            MessageBox.Show("保存成功");
+        }
+        string read;
+        private void btnOpenFile_Click(object sender, EventArgs e) {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "请选择要打开的文件";
+            openFileDialog.Filter = "文本文件|*.txt|所有文件|*.*";
+            openFileDialog.Multiselect = true;
+            openFileDialog.RestoreDirectory = true;
+            if (openFileDialog.ShowDialog() == DialogResult.OK) {
+                string fileName = openFileDialog.FileName;
+                txtSend.Text = fileName;
+                StreamReader sr = new StreamReader(fileName, Encoding.GetEncoding("gb2312"));
+                read = sr.ReadToEnd();
+                richTxtSend.Text = read;
+                sr.Close();
+            }
+        }
+
+        private async void btnSendFile_Click(object sender, EventArgs e) {
+            if (read == "") {
+                MessageBox.Show("请先选择文件");
+            }
+            try {
+                byte[] bytes = Encoding.GetEncoding("gb2312").GetBytes(read);
+                sendDataLength += bytes.Length;
+                sendNum_ToolStripStatus.Text = sendDataLength.ToString();
+                int pagenum = bytes.Length / 4096;
+                int remaind = bytes.Length % 4096;
+                for (int i = 0; i < pagenum; i++) {
+                    serialPort1.Write(bytes, (i*4096), 4096);
+                    await Task.Delay(10);
+                }
+                if (remaind > 0) {
+                    serialPort1.Write(bytes, pagenum * 4096, remaind);
+                }
+            }
+            catch (Exception ex) {
+                MessageBox.Show("mistake message:" + ex.Message);
+            }
+        }
     }
 }
