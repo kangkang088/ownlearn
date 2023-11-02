@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,11 +47,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmBaseManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBaseManager.Designer.cs">
+      <DependentUpon>FrmBaseManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFactory.cs" />
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNone.Designer.cs">
+      <DependentUpon>FrmNone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSetUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSetUser.Designer.cs">
+      <DependentUpon>FrmSetUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUserAppraisal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUserAppraisal.Designer.cs">
+      <DependentUpon>FrmUserAppraisal.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmUserManager.cs">
       <SubType>Form</SubType>
@@ -60,9 +86,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utility\SqlHelper.cs" />
+    <EmbeddedResource Include="FrmBaseManager.resx">
+      <DependentUpon>FrmBaseManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNone.resx">
+      <DependentUpon>FrmNone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSetUser.resx">
+      <DependentUpon>FrmSetUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUserAppraisal.resx">
+      <DependentUpon>FrmUserAppraisal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUserManager.resx">
       <DependentUpon>FrmUserManager.cs</DependentUpon>
@@ -90,7 +127,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{5d869d0c-d9d6-464f-a684-8214d742c167}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\Utility.csproj">
+      <Project>{1d7d7fc0-fdef-41cd-a888-fd42af00bd8b}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

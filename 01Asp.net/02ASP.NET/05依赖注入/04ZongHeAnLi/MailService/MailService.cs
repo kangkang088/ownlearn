@@ -1,12 +1,13 @@
 using System;
+using ConfigReader;
 using ConfigService;
 using LogService;
 
 namespace MailService {
     public class MailService : IMailService {
         private readonly ILogProvider log;
-        private readonly IConfigService config;
-        public MailService(ILogProvider log, IConfigService config){
+        private readonly IConfigReader config;
+        public MailService(ILogProvider log, IConfigReader config){
             this.log = log;
             this.config = config;
         }

@@ -23,10 +23,10 @@
         /// 使用代码编辑器修改此方法的内容。
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("用户管理");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("基数管理");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("系数管理");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("人员绩效");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("用户管理");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("基数管理");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("系数管理");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("人员绩效");
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.treeView1 = new System.Windows.Forms.TreeView();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -57,22 +57,26 @@
             this.treeView1.ItemHeight = 40;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
-            treeNode9.Name = "tnUserManager";
-            treeNode9.Text = "用户管理";
-            treeNode10.Name = "tnBaseManager";
-            treeNode10.Text = "基数管理";
-            treeNode11.Name = "tnCoefficientManager";
-            treeNode11.Text = "系数管理";
-            treeNode12.Name = "tnUserAppraisal";
-            treeNode12.Text = "人员绩效";
+            treeNode1.Name = "tnUserManager";
+            treeNode1.Tag = "FrmUserManager";
+            treeNode1.Text = "用户管理";
+            treeNode2.Name = "tnBaseManager";
+            treeNode2.Tag = "FrmBaseManager";
+            treeNode2.Text = "基数管理";
+            treeNode3.Name = "tnCoefficientManager";
+            treeNode3.Text = "系数管理";
+            treeNode4.Name = "tnUserAppraisal";
+            treeNode4.Tag = "FrmUserAppraisal";
+            treeNode4.Text = "人员绩效";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode9,
-            treeNode10,
-            treeNode11,
-            treeNode12});
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4});
             this.treeView1.ShowLines = false;
             this.treeView1.Size = new System.Drawing.Size(331, 656);
             this.treeView1.TabIndex = 0;
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
             // FrmMain
             // 

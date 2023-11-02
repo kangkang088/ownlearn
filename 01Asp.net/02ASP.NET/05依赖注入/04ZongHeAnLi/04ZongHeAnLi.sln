@@ -1,12 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppMailProvideer", "ConsoleAppMailProvideer\ConsoleAppMailProvideer.csproj", "{748DC83B-2810-4BB6-B1A0-B1F3C35AD8F5}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppMailProvideer", "ConsoleAppMailProvideer\ConsoleAppMailProvideer.csproj", "{748DC83B-2810-4BB6-B1A0-B1F3C35AD8F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogService", "LogService\LogService.csproj", "{DEC8068C-04C4-4264-ABD7-70D9A9425680}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogService", "LogService\LogService.csproj", "{DEC8068C-04C4-4264-ABD7-70D9A9425680}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailService", "MailService\MailService.csproj", "{8675CDBA-865E-4E48-BC6A-D855C6DE844C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailService", "MailService\MailService.csproj", "{8675CDBA-865E-4E48-BC6A-D855C6DE844C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigService", "ConfigService\ConfigService.csproj", "{591C2356-8D3C-468C-AA25-6F02CC14FB13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfigService", "ConfigService\ConfigService.csproj", "{591C2356-8D3C-468C-AA25-6F02CC14FB13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigReader", "ConfigReader\ConfigReader.csproj", "{2C8C0210-A09F-443C-8214-53E92BB51664}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +35,15 @@ Global
 		{591C2356-8D3C-468C-AA25-6F02CC14FB13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{591C2356-8D3C-468C-AA25-6F02CC14FB13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{591C2356-8D3C-468C-AA25-6F02CC14FB13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C8C0210-A09F-443C-8214-53E92BB51664}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C8C0210-A09F-443C-8214-53E92BB51664}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C8C0210-A09F-443C-8214-53E92BB51664}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C8C0210-A09F-443C-8214-53E92BB51664}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B260456-C6B3-4F1E-96D1-B94353D7C9C8}
 	EndGlobalSection
 EndGlobal

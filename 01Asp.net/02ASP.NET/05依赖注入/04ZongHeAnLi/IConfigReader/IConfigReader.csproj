@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ConfigService\ConfigService.csproj" />
+    <ProjectReference Include="..\LogService\LogService.csproj" />
+  </ItemGroup>
+
+</Project>
