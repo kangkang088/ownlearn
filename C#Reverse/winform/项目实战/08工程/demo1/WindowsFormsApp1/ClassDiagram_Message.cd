@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Modbus.Message.ModbusMessageImpl">
+    <Position X="3" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAEAAAAQAAACBAAAAAAAACABAAAIAABAABIAQ=</HashCode>
+      <FileName>NModbus4\Message\ModbusMessageImpl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Modbus.Message.AbstractModbusMessage">
+    <Position X="7.75" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAQAAAEAAQAAACJAAAAAAAAAAAAAAIAABAABAAA=</HashCode>
+      <FileName>NModbus4\Message\AbstractModbusMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Modbus.Message.AbstractModbusMessageWithData&lt;TData&gt;" Collapsed="true">
+    <Position X="5.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>NModbus4\Message\AbstractModbusMessageWithData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Modbus.Message.ReadCoilsInputsRequest">
+    <Position X="7.75" Y="4.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAEAABAAAAAAAICAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NModbus4\Message\ReadCoilsInputsRequest.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Modbus.Message.ReadHoldingInputRegistersRequest" Collapsed="true">
+    <Position X="11.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAEAABAAAAAAAICAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NModbus4\Message\ReadHoldingInputRegistersRequest.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Modbus.Message.ReadWriteMultipleRegistersRequest" Collapsed="true">
+    <Position X="13.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABBAAAAAAAEAAAAEBABAAAAAAAIAAAEAAAAAAAAAAQA=</HashCode>
+      <FileName>NModbus4\Message\ReadWriteMultipleRegistersRequest.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Modbus.Message.SlaveExceptionResponse" Collapsed="true">
+    <Position X="16" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAEAAAAEAABAAAAAAAAAAAAAAAAAAAAAQCA=</HashCode>
+      <FileName>NModbus4\Message\SlaveExceptionResponse.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Modbus.Message.WriteMultipleCoilsResponse" Collapsed="true">
+    <Position X="18.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAEAABAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NModbus4\Message\WriteMultipleCoilsResponse.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Modbus.Message.WriteMultipleRegistersResponse" Collapsed="true">
+    <Position X="20.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAEAABAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NModbus4\Message\WriteMultipleRegistersResponse.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Modbus.Message.IModbusMessage">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAQAAACAAAAAAAAAAAAAAAIAABAABAAA=</HashCode>
+      <FileName>NModbus4\Message\IModbusMessage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Modbus.Message.IModbusRequest">
+    <Position X="0.5" Y="3.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NModbus4\Message\IModbusRequest.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>
